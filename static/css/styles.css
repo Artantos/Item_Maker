@@ -1,0 +1,124 @@
+#card {
+    height: 452px;
+    /* Wysokość pozostała niezmieniona */
+    width: 334px;
+    /* 384 - 50 */
+    border: 2px solid black;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    padding-left: 50px;
+    padding-top: 60px;
+    /* Zwiększenie padding-top o kolejne 10px */
+    background-image: url("../images/ramka.png");
+    /* Zaktualizowana ścieżka */
+    background-size: 384px 512px;
+    position: relative;
+    /* Ustawienie kontenera w kontekście pozycjonowania */
+}
+
+#tytul {
+    max-width: 295px;
+    /* Maksymalna szerokość tytułu */
+    word-wrap: break-word;
+    /* Zawijanie długich słów */
+    overflow-wrap: break-word;
+    /* Zawijanie tekstu */
+    white-space: normal;
+    /* Zapewniamy zawijanie tekstu */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    /* Maksymalnie 2 linie w WebKit */
+    line-clamp: 2;
+    /* Standardowy sposób, gdy będzie obsługiwany */
+    overflow: hidden;
+    /* Ukrywa nadmiarowy tekst */
+    line-height: 1.4em;
+    /* Wysokość linii */
+    margin-bottom: 10px;
+    /* Przerwa poniżej tytułu */
+    margin-top: -20px;
+    /* Podniesienie tytułu o 20px */
+}
+
+#fluff_box,
+#stat_box {
+    width: 280px;
+    max-width: 295px;
+    /* Ustalamy maksymalną szerokość dla tekstu */
+    word-wrap: break-word;
+    /* Zawijanie długich słów */
+    overflow-wrap: break-word;
+    /* Zawijanie tekstu */
+    position: absolute;
+    /* Pozycjonowanie absolutne, by nie wpłynęło na resztę */
+    overflow: hidden;
+    /* Ukrywa nadmiarowy tekst */
+}
+
+#fluff_box {
+    top: 100px;
+    /* Pozycja fluff_box, przesunięta o 30px w dół */
+    display: -webkit-box;
+    /* Używamy -webkit-box, żeby zastosować line-clamp */
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    /* Ograniczamy fluff_box do 6 linii */
+    line-clamp: 6;
+    /* Standardowy sposób, gdy będzie obsługiwany */
+    overflow: hidden;
+    /* Ukrywa nadmiarowy tekst */
+    line-height: 1.4em;
+    /* Wysokość linii */
+}
+
+#stat_box {
+    top: 210px;
+    /* Pozycja stat_box, przesunięta o 30px w dół */
+    display: -webkit-box;
+    /* Używamy -webkit-box, żeby zastosować line-clamp */
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 10;
+    /* Ograniczamy stat_box do 10 linii */
+    line-clamp: 10;
+    /* Standardowy sposób, gdy będzie obsługiwany */
+    overflow: hidden;
+    /* Ukrywa nadmiarowy tekst */
+    line-height: 1.4em;
+    /* Wysokość linii */
+}
+
+#stat_box h3 {
+    margin-bottom: 0;
+    /* Usunięcie marginesu poniżej h3 */
+}
+
+#stat_box p {
+    margin-top: 0;
+    /* Usunięcie marginesu u góry p */
+}
+
+.button {
+    height: 20px;
+    width: 50px;
+    border: 2px solid black;
+    padding: 5px;
+    margin-top: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#buttonContainer {
+    display: flex;
+    flex-direction: column;
+    /* Układ pionowy dla obu sekcji */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#buttonGroup1,
+#buttonGroup2 {
+    display: flex;
+    gap: 10px;
+}
