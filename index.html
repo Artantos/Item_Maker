@@ -9,29 +9,37 @@
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
   </head>
   <body>
-    <div id="card">
-      <h2 id="tytul">Tiny Sword</h2>
-      <div id="fluff_box">
-        <i id="fluff_box_i">Tiny Sword: does shit</i>
-      </div>
-      <div id="stat_box">
-        <h3>Properties</h3>
-        <p id="stat_box_p">Tiny Sword: does shit</p>
+    <div id="cardsContainer">
+      <!-- Pierwsza karta (pozostaje bez zmian) -->
+      <div class="card">
+        <h2 id="tytul">Tiny Sword</h2>
+        <div id="fluff_box">
+          <i id="fluff_box_i">Tiny Sword: does shit</i>
+        </div>
+        <div id="stat_box">
+          <h3>Properties</h3>
+          <p id="stat_box_p">Tiny Sword: does shit</p>
+        </div>
       </div>
     </div>
 
     <div id="buttonContainer">
       <!-- Pierwsza grupa przycisków -->
       <div id="buttonGroup1">
-        <div id="tytul_button" class="button">tytul</div>
-        <div id="fluff_button" class="button">fluff</div>
-        <div id="staty_button" class="button">staty</div>
+        <div id="tytul_button" class="button">Tytul</div>
+        <div id="fluff_button" class="button">Fluff</div>
+        <div id="staty_button" class="button">Staty</div>
+      </div>
+
+      <div id="buttonGroupAddRemove">
+        <button id="addCardButton" class="button">Dodaj</button>
+        <button id="removeCardButton" class="button">Usuń</button>
       </div>
 
       <!-- Druga grupa przycisków -->
       <div id="buttonGroup2">
         <div id="generator" class="button">Generuj</div>
-        <div id="generator-text" class="button">tekst</div>
+        <div id="generator-text" class="button">Tekst</div>
       </div>
     </div>
 

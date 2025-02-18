@@ -1,124 +1,177 @@
-#card {
-    height: 452px;
-    /* Wysokość pozostała niezmieniona */
-    width: 334px;
-    /* 384 - 50 */
-    border: 2px solid black;
-    margin: 0;
-    margin-bottom: 10px;
-    padding: 0;
-    padding-left: 50px;
-    padding-top: 60px;
-    /* Zwiększenie padding-top o kolejne 10px */
-    background-image: url("../images/ramka.png");
-    /* Zaktualizowana ścieżka */
-    background-size: 384px 512px;
-    position: relative;
-    /* Ustawienie kontenera w kontekście pozycjonowania */
+/* Ogólny styl dla ciała strony */
+body {
+    font-family: Arial, sans-serif;
 }
 
+/* Styl przycisków */
+.button {
+    height: 40px;
+    width: 100px;
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Kontener przycisków */
+#buttonContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Grupa przycisków 1 */
+#buttonGroup1,
+#buttonGroup2,
+#buttonGroupAddRemove {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Umożliwia zawijanie przycisków do nowych wierszy */
+}
+
+/* Kontener kart */
+#cardsContainer {
+    display: flex;
+    gap: 0px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Styl samej karty */
+.card {
+    height: 452px;
+    width: 334px;
+    border: 2px solid black;
+    padding: 20px;
+    background-image: url("../images/ramka.png");
+    background-size: 384px 512px;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: row;
+    /* Zmieniamy na flex-direction: row, by elementy były obok siebie */
+    align-items: flex-start;
+    justify-content: space-between;
+    /* Wyrównujemy elementy po bokach */
+}
+
+/* Kontener karty z przyciskiem */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    /* Wyrównanie karty i przycisku */
+    margin-bottom: 20px;
+}
+
+/* Przycisk Staty dla każdej karty */
+.card-container .button {
+    width: 100px;
+    text-align: center;
+}
+
+/* Tytuł karty */
 #tytul {
-    max-width: 295px;
-    /* Maksymalna szerokość tytułu */
+    max-width: 290px;
     word-wrap: break-word;
-    /* Zawijanie długich słów */
     overflow-wrap: break-word;
-    /* Zawijanie tekstu */
     white-space: normal;
-    /* Zapewniamy zawijanie tekstu */
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    /* Maksymalnie 2 linie w WebKit */
-    line-clamp: 2;
-    /* Standardowy sposób, gdy będzie obsługiwany */
     overflow: hidden;
-    /* Ukrywa nadmiarowy tekst */
     line-height: 1.4em;
-    /* Wysokość linii */
     margin-bottom: 10px;
-    /* Przerwa poniżej tytułu */
-    margin-top: -20px;
-    /* Podniesienie tytułu o 20px */
+    margin-top: 0px;
+    text-align: left;
+    flex-grow: 1;
+    position: absolute;
+    left:50px;
+    top:35px;
 }
 
+/* Styl dla sekcji statystyk w karcie */
+.stat_box {
+    width: 100%;
+    text-align: left;
+}
+
+/* Styl dla tekstów fluff i statów */
 #fluff_box,
 #stat_box {
     width: 280px;
     max-width: 295px;
-    /* Ustalamy maksymalną szerokość dla tekstu */
     word-wrap: break-word;
-    /* Zawijanie długich słów */
     overflow-wrap: break-word;
-    /* Zawijanie tekstu */
     position: absolute;
-    /* Pozycjonowanie absolutne, by nie wpłynęło na resztę */
     overflow: hidden;
-    /* Ukrywa nadmiarowy tekst */
+    left: 100px;
 }
 
 #fluff_box {
     top: 100px;
-    /* Pozycja fluff_box, przesunięta o 30px w dół */
+    left: 50px;
     display: -webkit-box;
-    /* Używamy -webkit-box, żeby zastosować line-clamp */
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 6;
-    /* Ograniczamy fluff_box do 6 linii */
     line-clamp: 6;
-    /* Standardowy sposób, gdy będzie obsługiwany */
     overflow: hidden;
-    /* Ukrywa nadmiarowy tekst */
     line-height: 1.4em;
-    /* Wysokość linii */
 }
 
 #stat_box {
     top: 210px;
-    /* Pozycja stat_box, przesunięta o 30px w dół */
+    left: 50px;
     display: -webkit-box;
-    /* Używamy -webkit-box, żeby zastosować line-clamp */
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 10;
-    /* Ograniczamy stat_box do 10 linii */
     line-clamp: 10;
-    /* Standardowy sposób, gdy będzie obsługiwany */
     overflow: hidden;
-    /* Ukrywa nadmiarowy tekst */
     line-height: 1.4em;
-    /* Wysokość linii */
 }
 
+/* Styl dla nagłówków w stat boxie */
 #stat_box h3 {
     margin-bottom: 0;
-    /* Usunięcie marginesu poniżej h3 */
 }
 
+/* Styl dla tekstów w stat boxie */
 #stat_box p {
     margin-top: 0;
-    /* Usunięcie marginesu u góry p */
 }
 
-.button {
-    height: 20px;
-    width: 50px;
+/* Stylowanie przycisku "+" */
+.plus-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     border: 2px solid black;
-    padding: 5px;
-    margin-top: 20px;
-    display: inline-block;
+    background-color: white;
+    font-size: 24px;
+    font-weight: bold;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
 }
 
-#buttonContainer {
-    display: flex;
-    flex-direction: column;
-    /* Układ pionowy dla obu sekcji */
-    gap: 10px;
-    margin-top: 20px;
-}
-
-#buttonGroup1,
-#buttonGroup2 {
-    display: flex;
-    gap: 10px;
+/* Efekt hover dla przycisku "+" */
+.plus-button:hover {
+    background-color: lightgray;
 }
